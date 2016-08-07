@@ -31,3 +31,14 @@ def _map2(func, _list):
     if _list == []: return []
 
     return [func(_list[0])] + _map2(func, _list[1:])
+
+def quicksort(_list):
+    if _list == []:
+        return []
+
+    pivot = _list[0]
+
+    smallers = [x for x in _list if x < pivot]
+    biggers = [x for x in _list if x > pivot]
+
+    return smallers + [pivot] + biggers
